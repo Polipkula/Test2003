@@ -39,6 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
 <form action="login.php" method="POST" class="formik">
@@ -49,6 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="password" placeholder="Password" id="password" name="password">
     <button type="submit">Log In</button>
 </form>
+<footer>
+    © <?php echo date("Y"); ?> Polipkula's review page
+</footer>
 
 </body>
 </html>

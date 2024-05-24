@@ -15,10 +15,14 @@
             display: inline-block;
             vertical-align: top;
         }
-
-        .review-card img {
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+            position: fixed;
             width: 100%;
-            border-radius: 5px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -34,6 +38,9 @@ include 'header.php';
 <div class="container">
 
 </div>
+<footer>
+    © <?php echo date("Y"); ?> Polipkula's review page
+</footer>
 
 </body>
 </html>
