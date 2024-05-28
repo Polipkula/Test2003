@@ -35,6 +35,7 @@ include_once 'session.php';
 include 'header.php';
 
 ?>
+<H1>WIP</H1>
 
 <div class="container">
 

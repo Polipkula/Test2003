@@ -12,40 +12,44 @@ $userID = $_SESSION['userID'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game reviews</title>
+    <title>Game Reviews</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <style>
+        body {
+            background-color: #1b1b1b;
+            color: #c6c6c6;
+        }
         .review-card {
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 5px;
             padding: 20px;
             margin: 10px;
-            width: 300px;
-            display: inline-block;
-            vertical-align: top;
+            background-color: #2a2a2a;
+            color: #c6c6c6;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #f1f1f1;
-            border-top: 1px solid #ccc;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            background-color: #2a2a2a;
+            border-top: 1px solid #444;
+            color: #c6c6c6;
         }
         #add-review-btn {
             margin: 20px;
+            background-color: #66c0f4;
+            border: none;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>List of reviewed games</h1>
+    <h1 class="mt-4">List of Reviewed Games</h1>
     <button id="add-review-btn" class="btn btn-primary" data-toggle="modal" data-target="#addReviewModal">Add Review</button>
     <br>
-    <div id="reviews">
+    <div id="reviews" class="d-flex flex-wrap">
+        <!-- Reviews will be loaded here -->
     </div>
 </div>
 
@@ -99,7 +103,7 @@ $userID = $_SESSION['userID'];
 </div>
 
 <footer>
-    © <?php echo date("Y"); ?> Polipkula's review page
+    © <?php echo date("Y"); ?> Polipkula's Review Page
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -135,7 +139,7 @@ $userID = $_SESSION['userID'];
                     if (response.status === 'success') {
                         const newReview = `
                             <div class="review-card">
-                                <img src="${gameImage}" alt="Game" height="260" width="260">
+                                <img src="${gameImage}" alt="Game" class="img-fluid">
                                 <h2>${gameName}</h2>
                                 <p>Pros: ${gamePros}</p>
                                 <p>Cons: ${gameCons}</p>

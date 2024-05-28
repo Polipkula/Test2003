@@ -1,17 +1,21 @@
 <header>
-    <nav>
-        <ul style="background: #adadad">
-            <li><a href="index.php">Home</a></li>
-            <?php if (!isset($_SESSION['username'])): ?>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-            <?php endif; ?>
-            <?php if (isset($_SESSION['username'])): ?>
-                <li><a href="GameReviews.php">Game reviews</a></li>
-                <li><a href="CategoryGames.php">Best Games from Category</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            <?php endif; ?>
-
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.php">Polipkula's review page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <?php if (!isset($_SESSION['username'])): ?>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['username'])): ?>
+                    <li class="nav-item"><a class="nav-link" href="GameReviews.php">Game Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                <?php endif; ?>
+            </ul>
+        </div>
     </nav>
 </header>
