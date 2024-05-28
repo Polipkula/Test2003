@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, password_hash($row['password'], PASSWORD_DEFAULT))) {
+        if (password_verify($password, $row['password'])) {
             $_SESSION['userID'] = $row['id'];
             $_SESSION['username'] = $username;
             header('Location: GameReviews.php');
