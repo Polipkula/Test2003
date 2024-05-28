@@ -34,6 +34,9 @@ $userID = $_SESSION['userID'];
             background-color: #2a2a2a;
             border-top: 1px solid #444;
             color: #c6c6c6;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
         #add-review-btn {
             margin: 20px;
@@ -49,7 +52,6 @@ $userID = $_SESSION['userID'];
     <button id="add-review-btn" class="btn btn-primary" data-toggle="modal" data-target="#addReviewModal">Add Review</button>
     <br>
     <div id="reviews" class="d-flex flex-wrap">
-        <!-- Reviews will be loaded here -->
     </div>
 </div>
 

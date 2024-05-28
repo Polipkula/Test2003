@@ -52,6 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #2a2a2a;
             border-top: 1px solid #444;
             color: #c6c6c6;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
