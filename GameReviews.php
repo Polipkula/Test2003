@@ -137,11 +137,10 @@ $userID = $_SESSION['userID'];
                     gameImage: gameImage,
                     likeDislike: likeDislike
                 },
-                success: function(response) {
-                    if (response.status === 'success') {
+                success: function() {
                         const newReview = `
                             <div class="review-card">
-                                <img src="${gameImage}" alt="Game" class="img-fluid">
+                                <img src="${gameImage}" alt="Game">
                                 <h2>${gameName}</h2>
                                 <p>Pros: ${gamePros}</p>
                                 <p>Cons: ${gameCons}</p>
@@ -149,12 +148,11 @@ $userID = $_SESSION['userID'];
                                 <img src="${likeDislikeImage}" alt="Like/Dislike" height="50" width="50">
                             </div>
                         `;
-                        $('#reviews').append(newReview);
                         $('#addReviewForm')[0].reset();
                         $('#addReviewModal').modal('hide');
-                    } else {
-                        alert('Failed to add review: ' + response.message);
-                    }
+                        $('#reviews').append(newReview);
+                        window.location.reload();
+
                 },
                 error: function() {
                     alert('Failed to add review.');
